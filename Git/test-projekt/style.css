@@ -1,11 +1,11 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: 0;
+    box-sizing: border-box;
+    font-family: "Darker Grotesque", sans-serif;
 }
 
 h1 {
-    font-family: "Darker Grotesque", sans-serif;
     font-size: 64px;
     font-optical-sizing: auto;
     font-weight: 700;
@@ -13,42 +13,187 @@ h1 {
 }
 
 h3 {
-    font-family: "Darker Grotesque", sans-serif;
     font-size: 24px;
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
 }
 
-.header-container-img {
-    background-image: url(/Git/test-projekt/bilder/header-bild.jpg);
-    background-size: cover;
-    background-position: center;
+header {
+    position: fixed;
+    width: 100%;
+    padding-left: 96px;
     padding-right: 96px;
+}
+
+
+/* HEADER TEXTS */
+
+.content {
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
     padding-left: 96px;
 }
 
-.header-container {
-    color: white;
-    width: 100%;
-    height: 1024px;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(12, 1fr);
-    grid-column-gap: 32px; 
-}
+/* HEADER BACKGROUND */
 
-.header-navigation-bar {
-    grid-column: 1 / 13;
-    grid-row: 1 / 2;
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background: white;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    background-image: url(/Git/test-projekt/bilder/header-bild.jpg);
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    filter: brightness(0.8);
 }
 
-.header-titles {
-    grid-row: 6 / 7;
-    grid-column: 1 / 13;
-}
+/* NAVIGATION BAR */
+
+:root {
+    --nav-bg: #ffffff;
+    --main-clr: #AEDDD8;
+    --nav-shadow: 0px 1px 6px rgb(0,0,0,0.4);
+  }
+  
+  nav {
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    background: #ffffff;
+    padding-left: 32px;
+    padding-right: 32px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: var(--nav-shadow);
+  }
+  
+  nav .logo {
+    color: #000000;
+    text-decoration-color: var(--main-clr);
+  }
+  
+  nav ul {
+    --padding: 20px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    font-size: var(--font-size);
+    overflow-y: hidden;
+    transition: 1s cubic-bezier(.68,-0.55,.27,10.55);
+  }
+  
+  nav ul li {
+    padding: var(--padding);
+  }
+  
+  nav ul li a {
+    color: #000000;
+    text-decoration: none;
+    position: relative;
+  }
+  
+  nav ul li a::after {
+    content: "";
+    width: 0%;
+    height: 1.7px;
+    border-radius: 99px;
+    background: var(--main-clr);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s ease;
+  }
+  
+  nav ul li a:hover::after {
+    width: 100%;
+  }
+  
+  nav .menu {
+    width: 32px;
+    height: 16px;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    margin: 20px;
+  }
+  
+  nav .menu span {
+    width: 100%;
+    height: 2px;
+    border-radius: 99px;
+    background: #000000;
+    transition: 0.3s ease;
+    transform-origin: left;
+  }
+  
+  nav .menu.active span {
+    background: var(--main-clr);
+  }
+  
+  nav .menu.active span:nth-child(1) {
+    transform: rotate(40deg);
+  }
+  
+  nav .menu span:nth-child(3) {
+    transform-origin: left;
+  }
+  
+  nav .menu.active span:nth-child(3) {
+    transform: rotate(-40deg);
+  }
+  
+  nav .menu.active span:nth-child(2) {
+    transform: scale(0);
+  }
+  
+  @media (max-width: 910px) {
+    nav .menu {
+      display: flex;
+    }
+  
+    nav ul {
+      --height: 0px;
+  
+      flex-direction: column;
+      background: var(--nav-bg);
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 56px;
+      height: var(--height);
+      transition: 1s cubic-bezier(.68,-0.55,.27,1.55);
+    }
+    nav ul.active {
+      --height: calc(
+        (((var(--padding) * 2) + (var(--font-size) * 1.5))) * var(--childenNumber)
+      );
+      /*   (Block Level Padding + The Font Size) * The Number of Children   */
+      
+      
+      transition: 1s ease;
+    }
+  
+    nav ul li {
+      width: 100%;
+      text-align: center;
+    }
+    nav ul li a {
+      width: 100%;
+      text-transform: capitalize;
+    }
+  }
+  
