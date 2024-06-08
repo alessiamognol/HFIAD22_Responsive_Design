@@ -1,0 +1,314 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16;
+}
+
+/* COLOURS */
+
+:root {
+  --color-primary: #000000;
+  --color-secondary: #0500ff;
+  --color-third: #ffffff;
+  --color-bg: #f7f9fc;
+}
+
+/* FONT STYLES & CLASSES*/
+
+h1 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+  font-size: 50px;
+}
+
+h2 {
+  padding-bottom: 32px;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+  font-size: 35px;
+}
+
+h3 {
+  padding-bottom: 16px;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+  font-size: 16px;
+}
+
+p {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+  font-size: 16px;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.small {
+  font-size: 12px;
+  padding: 16px 0px;
+}
+
+.italic {
+  font-variation-settings: "slnt" 1;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+/* BUTTON */
+
+button {
+  font-size: 16px;
+  color: var(--color-secondary);
+  border: var(--color-secondary) solid 2px;
+  border-radius: 5px;
+  height: 46px;
+  padding: 0 46px;
+  margin: 8px 0px;
+  background: none;
+}
+
+button:hover {
+  color: var(--color-third);
+  background: var(--color-secondary);
+  cursor: pointer;
+}
+
+button:focus-visible {
+  outline: var(--color-primary) solid 3px;
+  outline-offset: 4px;
+}
+
+
+/* NAVIGATION */
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  background: #ffffff;
+  padding-left: 160px;
+  padding-right: 160px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  overflow-y: hidden;
+}
+
+nav ul li {
+  padding: 20px;
+}
+
+nav ul li a {
+  font-weight: 700;
+}
+
+.logo {
+    max-height: 48px;
+    padding-right: 16px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;;
+}
+
+.nav-logo p {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.nav-focus:focus-visible {
+  outline: var(--color-primary) solid 3px;
+  outline-offset: 8px;
+  height: 46px;
+  border-radius: 1px;
+}
+
+/* HEADING SECTION */
+
+.haeding-section {
+  padding: 56px 160px;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-column-gap: 20px;
+}
+
+.column-1-11 {
+  grid-column: 1 / 11;
+}
+
+.column-1-6 {
+  grid-column: 1 / 6;
+}
+
+.column-1-5 {
+  grid-column: 1 / 5;
+}
+
+.column-1-5 button{
+  width: 100%;
+}
+
+.column-1-4 {
+  grid-column: 1 / 4;
+}
+
+.column-5-9 {
+  grid-column: 5 / 9;
+}
+
+.column-9-11 {
+  grid-column: 9 / 11;
+}
+
+.dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.kurs {
+  display: flex;
+  padding: 12px;
+  flex-basis: calc(50% - 8px); /* 50% für die Hälfte der Breite, minus 16px für den gap */
+  background-color: var(--color-bg);
+  border-radius: 5px;
+  align-items: center;
+  box-sizing: border-box; /* Damit padding und border in die Breite einbezogen werden */
+}
+
+.kurs p {
+  padding: 1px 0px;
+}
+
+.kurs-img {
+  margin-right: 16px;
+  width: 56px;
+  height: 56px;
+  border-radius: 5px;
+  background-color: rgb(225, 225, 225);
+}
+
+.kurs-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.inflation {
+  display: flex;
+  padding: 12px;
+  width: 100%;
+  height: 160px;
+  background-color: var(--color-bg);
+  border-radius: 5px;
+}
+
+.kreditkarte {
+  width: 200%;
+  transform: translateX(64px);
+  overflow: clip;
+}
+
+/* NEWS SECTION */
+
+.latest-news {
+  padding: 56px 160px;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-column-gap: 20px;
+}
+
+.news {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.news-card {
+  display: flex;
+  padding: 0px;
+  flex-basis: calc(50% - 8px); /* 50% für die Hälfte der Breite, minus 16px für den gap */
+  border-radius: 5px;
+  align-items: center;
+  box-sizing: border-box; /* Damit padding und border in die Breite einbezogen werden */
+}
+
+.news p {
+  padding: 8px 0px;
+}
+
+.news-img {
+  margin-right: 16px;
+  width: 60%;
+  height: 100%;
+  border-radius: 5px;
+  background-color: rgb(225, 225, 225);
+}
+
+.news-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.news-text {
+  height: 100%;
+  max-width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-text button {
+  margin-top: 32px;
+}
+
+/* PUBLIACTIONS SECTION */
+
+.publications {
+  padding: 56px 160px;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-column-gap: 20px;
+}
+
+.publi-card {
+  display: flex;
+  padding: 0px;
+  border-radius: 5px;
+  align-items: center;
+  box-sizing: border-box; /* Damit padding und border in die Breite einbezogen werden */
+}
+
+.publi-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background-color: rgb(225, 225, 225);
+}
