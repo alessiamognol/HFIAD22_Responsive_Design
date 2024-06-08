@@ -81,13 +81,8 @@ a {
 .grid {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-}
-
-@media screen and (max-width: 438px) {
-  .grid {
-    grid-template-columns: repeat(5, 1fr);
-  }
-  
+  grid-column-gap: 16px;
+  gap: 16px;
 }
 
 /* BUTTON */
@@ -191,6 +186,14 @@ nav ul li a {
   grid-column-gap: 20px;
 }
 
+.lead {
+  grid-column: span 4;
+}
+
+.lead button {
+  width: 100%;
+}
+
 .column-1-11 {
   grid-column: 1 / 11;
 }
@@ -221,6 +224,10 @@ nav ul li a {
 }
 
 .dashboard {
+  grid-column: span 4;
+}
+
+.dash {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
@@ -272,15 +279,6 @@ nav ul li a {
 
 .latest-news {
   padding: 56px 160px;
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  grid-column-gap: 20px;
-}
-
-.news {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
 }
 
 .news-card {
@@ -301,8 +299,6 @@ nav ul li a {
   margin-right: 16px;
   width: 60%;
   height: 100%;
-  border-radius: 5px;
-  background-color: rgb(225, 225, 225);
 }
 
 .news-img img {
@@ -329,16 +325,6 @@ nav ul li a {
 
 .publications {
   padding: 56px 160px;
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  grid-column-gap: 20px;
-}
-
-.publi {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 16px;
 }
 
 .publi-card {
@@ -347,6 +333,7 @@ nav ul li a {
   border-radius: 5px;
   align-items: center;
   box-sizing: border-box; /* Damit padding und border in die Breite einbezogen werden */
+  grid-column: span 2;
 }
 
 .publi p {
@@ -463,4 +450,43 @@ footer ul li a {
   outline-offset: 8px;
   height: 46px;
   border-radius: 1px;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 1400px) {
+
+  nav {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+  .haeding-section {
+    padding: 28px 80px;
+  }
+
+  .latest-news {
+    padding: 28px 80px;
+  }
+
+  .publications {
+    padding: 56px 80px;
+  }
+
+  footer {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+  .news-card {
+    grid-column: span 10;
+  }
+
+  .publi-card {
+    grid-column: span 5;
+  }
 }
