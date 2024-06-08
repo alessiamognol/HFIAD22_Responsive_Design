@@ -16,6 +16,10 @@
   --color-bg: #f7f9fc;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 /* FONT STYLES & CLASSES*/
 
 h1 {
@@ -74,6 +78,18 @@ a {
   color: var(--color-primary);
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+}
+
+@media screen and (max-width: 438px) {
+  .grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  
+}
+
 /* BUTTON */
 
 button {
@@ -100,6 +116,10 @@ button:focus-visible {
 
 
 /* NAVIGATION */
+
+.burger-menu {
+  display: none;
+}
 
 nav {
   display: flex;
@@ -148,6 +168,20 @@ nav ul li a {
   border-radius: 1px;
 }
 
+@media screen and (max-width: 438px) {
+  .burger-menu {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.active {
+    display: block;
+  }
+}
+
 /* HEADING SECTION */
 
 .haeding-section {
@@ -183,6 +217,7 @@ nav ul li a {
 
 .column-9-11 {
   grid-column: 9 / 11;
+  position: relative;
 }
 
 .dashboard {
@@ -255,6 +290,7 @@ nav ul li a {
   border-radius: 5px;
   align-items: center;
   box-sizing: border-box; /* Damit padding und border in die Breite einbezogen werden */
+  grid-column: span 5;
 }
 
 .news p {
@@ -298,17 +334,133 @@ nav ul li a {
   grid-column-gap: 20px;
 }
 
+.publi {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+}
+
 .publi-card {
   display: flex;
-  padding: 0px;
+  flex-basis: calc(20% - 16px); /* 50% für die Hälfte der Breite, minus 16px für den gap */
   border-radius: 5px;
   align-items: center;
   box-sizing: border-box; /* Damit padding und border in die Breite einbezogen werden */
 }
 
-.publi-img {
+.publi p {
+  padding: 8px 0px;
+}
+
+.publi-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.publi-content img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  object-position: center;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+/* SOCIAL MEDIA */
+
+.socialmedia {
+  padding: 56px 160px;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-column-gap: 20px;
+}
+
+.some {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.some-card {
+  display: flex;
+  padding: 32px 32px 0px 32px;
+  flex-basis: calc(50% - 8px); /* 50% für die Hälfte der Breite, minus 16px für den gap */
+  background-color: var(--color-secondary);
+  border-radius: 10px;
+  box-sizing: border-box; /* Damit padding und border in die Breite einbezogen werden */
+}
+
+.some p {
+  padding: 8px 0px;
+}
+
+.some-img {
+  margin-right: 16px;
+  width: 90%;
+  height: 100%;
+}
+
+.some-img img {
   width: 100%;
   height: 100%;
-  border-radius: 5px;
-  background-color: rgb(225, 225, 225);
+  object-fit: cover;
+  object-position: center;
+  overflow: hidden;
+}
+
+.some-icon {
+  width: 64px;
+  display: flex;
+  flex-direction: column;
+  color: var(--color-third);
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  background: #ffffff;
+  padding-left: 160px;
+  padding-right: 160px;
+}
+
+footer ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  overflow-y: hidden;
+}
+
+footer ul li {
+  padding: 20px;
+}
+
+footer ul li a {
+  font-weight: 700;
+}
+
+.logo {
+    max-height: 48px;
+    padding-right: 16px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;;
+}
+
+.footer-logo p {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.footer-focus:focus-visible {
+  outline: var(--color-primary) solid 3px;
+  outline-offset: 8px;
+  height: 46px;
+  border-radius: 1px;
 }
