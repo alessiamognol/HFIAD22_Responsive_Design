@@ -114,6 +114,11 @@ button:focus-visible {
 
 .burger-menu {
   display: none;
+  border: none;
+  font-size: 32px;
+  color: var(--color-primary);
+  padding: 0px;
+  margin: 0px;
 }
 
 nav {
@@ -163,12 +168,18 @@ nav ul li a {
   border-radius: 1px;
 }
 
-@media screen and (max-width: 438px) {
+@media screen and (max-width: 1200px) {
   .burger-menu {
     display: block;
+    position: absolute;
+    right: 0;
   }
 
   .nav-links {
+    display: none;
+  }
+
+  .nav-button {
     display: none;
   }
 
@@ -475,6 +486,13 @@ footer ul li a {
 
   .publications {
     padding: 56px 80px;
+  }
+
+  .socialmedia {
+    padding: 28px 80px;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-column-gap: 20px;
   }
 
   footer {
